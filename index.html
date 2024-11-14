@@ -3,144 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Portfolio</title>
+    <title>Maia Buljeta | Modeling Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
             color: #333;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            position: relative;
+
+        /* Navigation */
+        nav {
+            background-color: #222;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        nav h1 {
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
         nav ul {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-        nav ul li a {
-            color: white;
+
+        nav a {
+            color: #fff;
             text-decoration: none;
+            font-size: 1em;
             transition: color 0.3s;
         }
-        nav ul li a:hover {
-            color: #ffdd57;
+
+        nav a:hover {
+            color: #ff4081;
         }
-        section {
-            padding: 40px 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .gallery {
+
+        /* Header Section */
+        header {
+            background-image: url('https://example.com/cover-photo.jpg'); /* Replace with a personal high-quality image */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
         }
-        .gallery img {
-            width: calc(50% - 10px);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        form label {
-            margin-bottom: 5px;
-        }
-        form input, form textarea {
+
+        header h2 {
+            font-size: 2.5em;
             margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff4081;
+        }
+
+        .about p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+        }
+
+        .portfolio h3 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff4081;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .portfolio-item {
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff4081;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
             padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            transition: border 0.3s;
+            font-size: 1em;
         }
-        form input:focus, form textarea:focus {
-            border-color: #ffdd57;
-            outline: none;
-        }
-        button {
-            padding: 10px;
-            background-color: #333;
-            color: white;
+
+        .contact button {
+            padding: 10px 20px;
+            background-color: #ff4081;
             border: none;
+            color: #fff;
             border-radius: 5px;
+            font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #555;
+
+        .contact button:hover {
+            background-color: #ff6a9f;
         }
+
+        /* Footer */
         footer {
+            background-color: #222;
+            color: #fff;
             text-align: center;
-            padding: 15px 0;
-            background-color: #333;
-            color: white;
-            position: relative;
+            padding: 20px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #ff4081;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>Maia Buljeta</h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
     <header>
-        <h1>Model Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div>
+            <h2>Welcome to My Portfolio</h2>
+            <p>A modern and vibrant look into my modeling journey.</p>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to my modeling portfolio! I am a passionate model looking to collaborate with brands and photographers. Here are some of my best works.</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h3>About Me</h3>
+        <p>I'm Maia Buljeta, a passionate model based in [Your Location]. With a love for fashion and the art of self-expression, I bring confidence, elegance, and dedication to each photoshoot and runway appearance. Browse my portfolio and get in touch—I'm excited to work together!</p>
     </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/300x200?text=Modeling+Photo+1" alt="Modeling Photo 1">
-            <img src="https://via.placeholder.com/300x200?text=Modeling+Photo+2" alt="Modeling Photo 2">
-            <img src="https://via.placeholder.com/300x200?text=Modeling+Photo+3" alt="Modeling Photo 3">
-            <img src="https://via.placeholder.com/300x200?text=Modeling+Photo+4" alt="Modeling Photo 4">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h3>Portfolio</h3>
+        <div class="portfolio-grid">
+            <!-- Repeat this div for each image in the portfolio -->
+            <div class="portfolio-item">
+                <img src="https://example.com/photo1.jpg" alt="Modeling Photo 1"> <!-- Replace with actual images -->
+            </div>
+            <div class="portfolio-item">
+                <img src="https://example.com/photo2.jpg" alt="Modeling Photo 2"> <!-- Replace with actual images -->
+            </div>
+            <!-- Add more portfolio items as needed -->
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h3>Contact Me</h3>
+        <form action="mailto:maiabuljeta@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Model Portfolio. All Rights Reserved.</p>
+        <p>&copy; 2024 Maia Buljeta | Connect with me on <a href="#">Instagram</a> | <a href="mailto:maiabuljeta@gmail.com">maiabuljeta@gmail.com</a></p>
     </footer>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Thank you for your message! I will get back to you soon.");
-            this.reset();
-        });
-    </script>
 </body>
 </html>
+
